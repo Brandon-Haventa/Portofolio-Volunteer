@@ -304,6 +304,30 @@ section:nth-child(even) {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+    align-items: stretch;
+}
+
+.volunteer-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-icon {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    background: rgba(99, 102, 241, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-icon img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .volunteer-card {
@@ -320,6 +344,8 @@ section:nth-child(even) {
 
 .volunteer-card:nth-child(1) {
     animation-delay: 0.2s;
+    background: linear-gradient(135deg, #fbe8a6 0%, #f5d76e 50%, #d4af37 100%) !important;
+    border: 2px solid #c89f38;
 }
 
 .volunteer-card:nth-child(2) {
@@ -350,7 +376,6 @@ section:nth-child(even) {
 
 .card-icon {
     font-size: 3rem;
-    margin-bottom: 1rem;
     background: var(--primary-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -362,7 +387,6 @@ section:nth-child(even) {
     height: 100px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 1rem;
 }
 
 /* Card 1 with Image Styling */
@@ -454,6 +478,15 @@ section:nth-child(even) {
     font-size: 0.85rem;
     font-weight: 500;
     border: 1px solid rgba(99, 102, 241, 0.2);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.skill-tag:hover {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.25) 0%, rgba(236, 72, 153, 0.25) 100%);
+    border-color: rgba(99, 102, 241, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.2);
 }
 
 /* ==================== SKILLS SECTION ==================== */
