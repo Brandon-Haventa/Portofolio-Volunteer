@@ -301,8 +301,8 @@ section:nth-child(even) {
 /* ==================== VOLUNTEER SECTION ==================== */
 .volunteer-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 2.5rem;
     margin-top: 2rem;
     align-items: stretch;
 }
@@ -310,6 +310,7 @@ section:nth-child(even) {
 .volunteer-card {
     display: flex;
     flex-direction: column;
+    min-height: 560px;
 }
 
 .card-icon {
@@ -333,13 +334,16 @@ section:nth-child(even) {
 .volunteer-card {
     background: var(--white);
     border-radius: 20px;
-    padding: 2.5rem;
+    padding: 3rem;
     box-shadow: var(--shadow);
     transition: var(--transition);
     position: relative;
     overflow: hidden;
     animation: fadeInUp 0.8s ease forwards;
     opacity: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .volunteer-card:nth-child(1) {
@@ -350,6 +354,14 @@ section:nth-child(even) {
 
 .volunteer-card:nth-child(2) {
     animation-delay: 0.4s;
+    background: linear-gradient(135deg, #fbe8a6 0%, #f5d76e 50%, #d4af37 100%) !important;
+    border: 2px solid #c89f38;
+}
+
+.volunteer-card:nth-child(3) {
+    animation-delay: 0.6s;
+    background: linear-gradient(135deg, #fbe8a6 0%, #f5d76e 50%, #d4af37 100%) !important;
+    border: 2px solid #c89f38;
 }
 
 .volunteer-card::before {
@@ -426,35 +438,50 @@ section:nth-child(even) {
 }
 
 .card-title {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     color: var(--text-dark);
+    text-align: left;
+    min-height: 140px;
 }
 
 .card-description {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     color: var(--text-light);
-    font-size: 0.95rem;
-    line-height: 1.7;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    text-align: left;
 }
 
 .card-description p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+    color: #333;
 }
 
-.card-description ul {
+.section-list {
     list-style: none;
-    margin: 1rem 0;
+    margin: 1rem 0 1.5rem 0;
     padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    flex-grow: 1;
+    min-height: 190px;
 }
 
-.card-description li {
-    padding-left: 1.5rem;
+.section-list li {
+    padding-left: 2rem;
     position: relative;
-    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
 }
 
-.card-description li::before {
+.section-list li::before {
     content: '✓';
     position: absolute;
     left: 0;
@@ -465,19 +492,20 @@ section:nth-child(even) {
 .skills-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.8rem;
-    margin-top: 1rem;
+    gap: 1rem;
+    margin-top: auto;
 }
+
 
 .skill-tag {
     display: inline-block;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(236, 72, 153, 0.15) 100%);
     color: var(--text-dark);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    border: 1px solid rgba(99, 102, 241, 0.2);
+    padding: 0.7rem 1.2rem;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: 1px solid rgba(99, 102, 241, 0.3);
     transition: var(--transition);
     cursor: pointer;
 }
@@ -487,6 +515,78 @@ section:nth-child(even) {
     border-color: rgba(99, 102, 241, 0.4);
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(99, 102, 241, 0.2);
+}
+
+/* ==================== CARD SECTIONS ==================== */
+.responsibility-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 220px;
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #6366f1;
+}
+
+.responsibility-section p {
+    margin: 0 0 1rem 0 !important;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #1f2937;
+}
+
+.responsibility-section ul {
+    list-style: none;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    flex-grow: 1;
+}
+
+.responsibility-section li {
+    padding-left: 2rem !important;
+    margin-bottom: 0 !important;
+    line-height: 1.6;
+}
+
+.responsibility-section li:last-child {
+    margin-bottom: 0 !important;
+}
+
+.skills-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(236, 72, 153, 0.08) 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid #ec4899;
+}
+
+.skills-section p {
+    margin: 0 0 1rem 0 !important;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #1f2937;
+}
+
+.skills-section .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0 !important;
+}
+
+.volunteer-card .skills-section {
+    flex-shrink: 0;
+}
+
+.volunteer-card .responsibility-section {
+    min-height: 240px;
 }
 
 /* ==================== SKILLS SECTION ==================== */
